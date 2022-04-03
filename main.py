@@ -2,6 +2,8 @@ import streamlit as st
 import chess
 import chess.svg
 import os
+import importlib
+
 
 if __name__ == '__main__':
     #Pasting the name of given IA from agents
@@ -21,6 +23,8 @@ if __name__ == '__main__':
     if white_name!="None"and black_name!="None":
         st.header(f"{white_name}White versus {black_name}Black")
         st.sidebar.button("Play")
+        white_agent=importlib.import_module(f"agents.{white_name}")
+        black_agent=importlib.import_module(f"agents.{black_name}")
         board=chess.Board()#board instatciation with chess
         svg_board=chess.svg.board(board)#board as SVG
         with open("svg_board.svg", "w")as svg:
