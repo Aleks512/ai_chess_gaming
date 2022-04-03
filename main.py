@@ -18,8 +18,8 @@ if __name__ == '__main__':
     black_name=st.sidebar.selectbox('Slect the black AI', agents)
     #Creating the sidebar button "Play"
     st.sidebar.button("Play")
-    
-    
+    if white_name!="None"and black_name!="None":
+        st.header(f"{white_name}White versus {black_name}Black")
     st.title('AI Chess App') #UI Title with st
     board=chess.Board()#board instatciation with chess
     svg_board=chess.svg.board(board)#board as SVG
