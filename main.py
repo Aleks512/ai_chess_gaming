@@ -10,7 +10,14 @@ if __name__ == '__main__':
         for file in files:
             ai_name=file.replace(".py", "")
             agents.append(ai_name)
-            print(agents)
+            agents.insert(0,"None")
+            
+            
+    #Creating the sidebar's selectbox with agents' list names options
+    white_name=st.sidebar.selectbox('Slect the white AI', agents)
+    black_name=st.sidebar.selectbox('Slect the black AI', agents)
+    #Creating the sidebar button "Play"
+    st.sidebar.button("Play")
     
     
     st.title('AI Chess App') #UI Title with st
